@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --bg:     #080c16;
+  --surf:   #0f1624;
+  --surf2:  #141e30;
+  --border: rgba(255,255,255,0.07);
+  --bsub:   rgba(255,255,255,0.03);
+  --t1:     #dde4ef;
+  --t2:     #7c8fa8;
+  --t3:     #3a4d62;
+  --green:  #00d4a1;
+  --gdim:   rgba(0,212,161,0.12);
+  --red:    #f04361;
+  --rdim:   rgba(240,67,97,0.12);
+  --blue:   #4f8aef;
+  --bdim:   rgba(79,138,239,0.12);
+  --amber:  #f5a820;
+  --adim:   rgba(245,168,32,0.12);
+  --purple: #a855f7;
+  --pdim:   rgba(168,85,247,0.12);
+  --font:   var(--font-inter, system-ui, sans-serif);
+  --mono:   var(--font-mono, monospace);
+}
+
+html, body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--t1);
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pdot {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.85; transform: scale(1.35); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flash-up {
+  0%   { background-color: rgba(0,212,161,0.28); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-down {
+  0%   { background-color: rgba(240,67,97,0.28); }
+  100% { background-color: transparent; }
+}
+
+.price-flash-up   { animation: flash-up   1.4s ease-out forwards; }
+.price-flash-down { animation: flash-down 1.4s ease-out forwards; }
