@@ -753,7 +753,7 @@ export default function DashboardPage() {
               {isMarketOpen ? 'LIVE' : 'CLOSED'}
             </span>
           </div>
-          <span style={{ fontSize: 10, color: '#3a4d62' }}>Auto 07:00 CET</span>
+          <span style={{ fontSize: 10, color: '#3a4d62' }}>Auto 15:45 CET</span>
         </div>
 
         {/* Run Marcus */}
@@ -1136,7 +1136,7 @@ export default function DashboardPage() {
         <span style={{ fontVariantNumeric: 'tabular-nums' }}>{clock}</span>
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 16 }}>
           <span>Prices via Yahoo Finance &nbsp;·&nbsp; Macro via FRED</span>
-          <span>Next auto-run: tomorrow 07:00 CET</span>
+          <span>Next auto-run: tomorrow 15:45 CET</span>
           {latestBriefing && (
             <span>Last run: {lastRunDate} &nbsp;·&nbsp; Day {briefingsCount}</span>
           )}
