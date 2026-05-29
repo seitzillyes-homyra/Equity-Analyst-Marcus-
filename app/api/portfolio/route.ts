@@ -81,7 +81,11 @@ export async function GET(req: NextRequest) {
         try {
           const res = await fetch(
             `https://query1.finance.yahoo.com/v8/finance/chart/${p.ticker}?interval=1d&range=1d`,
-            { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json' }, cache: 'no-store' }
+            {
+              headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json' },
+              cache: 'no-store',
+              signal: AbortSignal.timeout(5000),
+            }
           )
           if (res.ok) {
             const json = await res.json()
